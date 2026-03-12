@@ -6,8 +6,6 @@ import os
 from dotenv import load_dotenv
 
 # 🔒 IMPORT SECURITY
-import sys
-sys.path.append('/app/backend')
 from security import InputSanitizer, CostProtection, MongoDBSecurity
 
 load_dotenv()
