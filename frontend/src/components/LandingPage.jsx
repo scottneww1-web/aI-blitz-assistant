@@ -66,7 +66,7 @@ export default function LandingPage({ onSelectExpert }) {
             <div className="flex justify-center gap-4 mb-8 flex-wrap">
               <Badge variant="glow" className="mb-2">
                 <Sparkles size={16} />
-                Powered by GPT-5.2
+                Self-Evolving AI
               </Badge>
               <Badge variant="default" className="mb-2">
                 <Shield size={16} />
@@ -87,9 +87,9 @@ export default function LandingPage({ onSelectExpert }) {
             </h1>
 
             <p className="text-xl md:text-2xl text-slate-300 mb-4 leading-relaxed max-w-3xl mx-auto">
-              Embed elite AI expertise into <span className="text-precision-cyan-400 font-semibold">any application</span>.
+              Self-evolving AI that <span className="text-precision-cyan-400 font-semibold">automatically updates</span> and upgrades.
               <br />
-              Military-grade security. HIPAA compliant. Deploy anywhere.
+              Embed into <span className="text-precision-emerald-400 font-semibold">any application</span>. Military-grade security. Zero maintenance.
             </p>
 
             <p className="text-lg text-slate-400 mb-8 max-w-2xl mx-auto">
@@ -134,8 +134,8 @@ export default function LandingPage({ onSelectExpert }) {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-8 mt-16 max-w-3xl mx-auto">
               {[
-                { label: 'Response Time', value: '<1s', subtext: 'Average' },
-                { label: 'Encryption', value: '256-bit', subtext: 'Military Grade' },
+                { label: 'Response Time', value: '<1s', subtext: 'Lightning Fast' },
+                { label: 'Auto-Updates', value: '24/7', subtext: 'Self-Evolving' },
                 { label: 'Uptime', value: '99.9%', subtext: 'Guaranteed' },
               ].map((stat, i) => (
                 <motion.div
@@ -228,6 +228,62 @@ export default function LandingPage({ onSelectExpert }) {
               viewport={{ once: true }}
             >
               <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-precision-cyan-500 to-precision-teal-600 mb-6 shadow-glow-cyan">
+                <Sparkles size={40} className="text-white animate-pulse" />
+              </div>
+              <h3 className="text-3xl font-bold mb-4">
+                <span className="bg-gradient-to-r from-precision-cyan-400 to-precision-emerald-400 text-transparent bg-clip-text">
+                  Self-Evolving Intelligence
+                </span>
+              </h3>
+              <p className="text-slate-300 text-lg mb-8">
+                Precision AI automatically updates itself with the latest models, features, and knowledge.
+                <br />
+                <span className="text-precision-cyan-400 font-semibold">Zero manual intervention required.</span>
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+              {[
+                {
+                  title: 'Auto-Model Updates',
+                  desc: 'Seamlessly upgrades to latest AI models (GPT-5.2+). Always cutting-edge performance.',
+                },
+                {
+                  title: 'Continuous Learning',
+                  desc: 'Learns from interactions while maintaining privacy. Gets smarter over time without configuration.',
+                },
+                {
+                  title: 'Zero Downtime',
+                  desc: 'Updates happen in the background. Your workflow never stops. Always available.',
+                },
+              ].map((feature, i) => (
+                <motion.div
+                  key={feature.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                >
+                  <GlassCard className="text-center h-full">
+                    <h4 className="text-xl font-semibold mb-3 text-precision-cyan-400">{feature.title}</h4>
+                    <p className="text-slate-400 leading-relaxed">{feature.desc}</p>
+                  </GlassCard>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Embed Anywhere */}
+        <section className="container mx-auto px-6 py-20 bg-slate-900/20">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-precision-cyan-500 to-precision-teal-600 mb-6 shadow-glow-cyan">
                 <Layers size={40} className="text-white" />
               </div>
               <h3 className="text-3xl font-bold mb-4">
@@ -248,8 +304,8 @@ export default function LandingPage({ onSelectExpert }) {
                   desc: 'Drop-in component for any web or mobile app. Works with all tech stacks.',
                 },
                 {
-                  title: 'Background Intelligence',
-                  desc: 'Run alongside your apps. Context-aware assistance without interrupting workflow.',
+                  title: 'Self-Evolving AI',
+                  desc: 'Automatic updates and upgrades. Always running the latest AI models without manual intervention.',
                 },
                 {
                   title: 'Secure & Private',

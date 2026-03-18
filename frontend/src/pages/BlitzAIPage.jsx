@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import LandingPage from '../components/LandingPage';
+import LandingPage2027 from '../components/LandingPage2027';
 import ChatInterface from '../components/ChatInterface';
 
 export default function BlitzAIPage() {
@@ -20,5 +20,5 @@ export default function BlitzAIPage() {
     return <ChatInterface expert={selectedExpert} onBack={handleBack} />;
   }
 
-  return <LandingPage onSelectExpert={handleSelectExpert} />;
+  return <LandingPage2027 onSelectExpert={handleSelectExpert} />;
 }
