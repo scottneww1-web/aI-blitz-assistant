@@ -2,8 +2,7 @@ app = "ai-blitz-frontend"
 primary_region = "iad"
 
 [build]
-  dockerfile = "frontend/Dockerfile"
-  build-context = "frontend"
+  dockerfile = "Dockerfile"
 
 [env]
   PORT = "8080"
