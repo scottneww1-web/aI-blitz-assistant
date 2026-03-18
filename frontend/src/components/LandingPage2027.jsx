@@ -191,7 +191,7 @@ export default function LandingPage({ onSelectExpert }) {
           </motion.div>
         </section>
 
-        {/* Neural Expert Selection */}
+        {/* Cyber Expert Selection */}
         <section id="experts" className="container mx-auto px-6 py-24">
           <motion.div
             className="text-center mb-20"
@@ -201,12 +201,12 @@ export default function LandingPage({ onSelectExpert }) {
           >
             <h2 className="text-5xl md:text-6xl font-black mb-6">
               Select Your{' '}
-              <span className="bg-gradient-to-r from-neon-violet-400 via-neon-pink-400 to-neon-cyan-400 text-transparent bg-clip-text">
-                Neural Agent
+              <span className="bg-gradient-to-r from-cyber-cyan-400 via-cyber-green-400 to-cyan-400 text-transparent bg-clip-text">
+                Quantum Agent
               </span>
             </h2>
             <p className="text-gray-400 text-xl max-w-2xl mx-auto">
-              Quantum-encrypted AI expertise that evolves with you. Zero configuration required.
+              Military-encrypted AI expertise that self-evolves with you. Zero configuration required.
             </p>
           </motion.div>
 
@@ -223,17 +223,17 @@ export default function LandingPage({ onSelectExpert }) {
                 >
                   <div
                     onClick={() => onSelectExpert(expert)}
-                    className="group relative h-full p-8 bg-void-900/40 backdrop-blur-2xl border border-white/10 rounded-3xl hover:border-neon-violet-400/50 hover:shadow-holographic transition-all duration-300 cursor-pointer overflow-hidden"
+                    className="group relative h-full p-8 bg-void-900/40 backdrop-blur-2xl border border-white/10 rounded-3xl hover:border-cyber-cyan-400/50 hover:shadow-matrix-glow transition-all duration-300 cursor-pointer overflow-hidden"
                   >
-                    {/* Holographic Shine Effect */}
+                    {/* Matrix Shine Effect */}
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
                     
-                    <div className={`inline-flex p-5 rounded-2xl bg-gradient-to-br ${expert.gradient} mb-6 shadow-holographic relative`}>
+                    <div className={`inline-flex p-5 rounded-2xl bg-gradient-to-br ${expert.gradient} mb-6 shadow-matrix-glow relative`}>
                       <Icon size={40} className="text-white relative z-10" />
-                      <div className="absolute inset-0 bg-holographic rounded-2xl opacity-0 group-hover:opacity-50 transition-opacity blur-xl" />
+                      <div className="absolute inset-0 bg-matrix-glow rounded-2xl opacity-0 group-hover:opacity-50 transition-opacity blur-xl" />
                     </div>
 
-                    <h3 className="text-3xl font-bold mb-4 text-white group-hover:text-neon-violet-300 transition-colors">
+                    <h3 className="text-3xl font-bold mb-4 text-white group-hover:text-cyber-cyan-300 transition-colors">
                       {expert.name}
                     </h3>
                     <p className="text-gray-300 mb-6 leading-relaxed text-lg">{expert.description}</p>
@@ -242,15 +242,15 @@ export default function LandingPage({ onSelectExpert }) {
                       {expert.skills.map((skill) => (
                         <span
                           key={skill}
-                          className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-sm text-gray-300 backdrop-blur-sm hover:border-neon-violet-400/50 transition-all"
+                          className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-sm text-gray-300 backdrop-blur-sm hover:border-cyber-cyan-400/50 transition-all"
                         >
                           {skill}
                         </span>
                       ))}
                     </div>
 
-                    <div className="flex items-center text-neon-violet-400 font-semibold text-lg group-hover:gap-3 transition-all">
-                      Launch Neural Session
+                    <div className="flex items-center text-cyber-cyan-400 font-semibold text-lg group-hover:gap-3 transition-all">
+                      Launch Quantum Session
                       <ArrowRight size={20} className="ml-2 group-hover:translate-x-2 transition-transform" />
                     </div>
                   </div>
@@ -270,21 +270,21 @@ export default function LandingPage({ onSelectExpert }) {
               viewport={{ once: true }}
             >
               <div className="relative inline-block mb-8">
-                <div className="absolute inset-0 bg-gradient-to-r from-neon-violet-500 via-neon-pink-500 to-neon-cyan-500 rounded-full blur-2xl opacity-40 animate-pulse-glow" />
-                <div className="relative p-6 rounded-full bg-gradient-to-br from-neon-violet-500 via-neon-pink-500 to-neon-cyan-500 shadow-holographic">
+                <div className="absolute inset-0 bg-gradient-to-r from-cyber-cyan-500 via-cyber-green-500 to-cyber-cyan-500 rounded-full blur-2xl opacity-40 animate-pulse-glow" />
+                <div className="relative p-6 rounded-full bg-gradient-to-br from-cyber-cyan-500 via-cyber-green-500 to-cyan-500 shadow-matrix-glow">
                   <Infinity size={56} className="text-white animate-spin" style={{ animationDuration: '4s' }} />
                 </div>
               </div>
               
               <h3 className="text-5xl font-black mb-6">
-                <span className="bg-gradient-to-r from-neon-violet-400 via-neon-pink-400 to-neon-cyan-400 text-transparent bg-clip-text animate-gradient-x bg-[length:200%_auto]">
-                  Infinite Self-Evolution
+                <span className="bg-gradient-to-r from-cyber-cyan-400 via-cyber-green-400 to-cyan-400 text-transparent bg-clip-text animate-gradient-x bg-[length:200%_auto]">
+                  Quantum Self-Evolution
                 </span>
               </h3>
               <p className="text-gray-300 text-2xl mb-8 font-light">
-                Neural AI autonomously upgrades itself with the latest models, features, and knowledge.
+                Cyber AI autonomously upgrades itself with latest quantum models, features, and knowledge.
                 <br />
-                <span className="text-neon-pink-400 font-semibold">Zero manual updates. Ever.</span>
+                <span className="text-cyber-green-400 font-semibold">Zero manual updates. Ever.</span>
               </p>
             </motion.div>
 
@@ -292,21 +292,21 @@ export default function LandingPage({ onSelectExpert }) {
               {[
                 {
                   title: 'Quantum Model Sync',
-                  desc: 'Seamlessly upgrades to GPT-6, Claude Opus 5, and beyond. Always the cutting-edge.',
+                  desc: 'Seamlessly upgrades to GPT-6, Claude Opus 5, and beyond. Always cutting-edge.',
                   icon: Brain,
-                  color: 'neon-violet',
+                  color: 'cyber-cyan',
                 },
                 {
-                  title: 'Neural Learning',
+                  title: 'Adaptive Learning',
                   desc: 'Continuously learns from interactions while maintaining military-grade privacy.',
                   icon: Sparkles,
-                  color: 'neon-pink',
+                  color: 'cyber-green',
                 },
                 {
                   title: 'Zero-Downtime Evolution',
                   desc: 'Updates happen in quantum parallel. Your workflow never interrupts.',
                   icon: Infinity,
-                  color: 'neon-cyan',
+                  color: 'cyan',
                 },
               ].map((feature, i) => {
                 const Icon = feature.icon;
@@ -333,7 +333,7 @@ export default function LandingPage({ onSelectExpert }) {
         <section className="container mx-auto px-6 py-24">
           <div className="max-w-4xl mx-auto text-center">
             <h3 className="text-5xl font-black mb-12">
-              <span className="bg-gradient-to-r from-neon-violet-400 to-neon-cyan-400 text-transparent bg-clip-text">
+              <span className="bg-gradient-to-r from-cyber-cyan-400 to-cyber-green-400 text-transparent bg-clip-text">
                 Quantum-Grade Security
               </span>
             </h3>
@@ -350,13 +350,13 @@ export default function LandingPage({ onSelectExpert }) {
               ].map((cert, i) => (
                 <motion.div
                   key={cert}
-                  className="bg-void-900/40 border border-neon-violet-500/20 rounded-2xl p-6 backdrop-blur-xl hover:border-neon-violet-400 hover:shadow-neon-violet transition-all"
+                  className="bg-void-900/40 border border-cyber-cyan-500/20 rounded-2xl p-6 backdrop-blur-xl hover:border-cyber-cyan-400 hover:shadow-cyber-cyan transition-all"
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
                 >
-                  <CheckCircle2 size={24} className="text-neon-violet-400 mx-auto mb-3" />
+                  <CheckCircle2 size={24} className="text-cyber-cyan-400 mx-auto mb-3" />
                   <p className="text-sm text-gray-300 font-medium">{cert}</p>
                 </motion.div>
               ))}
