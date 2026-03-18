@@ -5,35 +5,35 @@ import { Button, Badge, GlassCard } from '../components/ui/primitives';
 const experts = [
   {
     id: 'coding',
-    name: 'Neural Coding',
+    name: 'Cyber Coding',
     icon: Terminal,
-    gradient: 'from-neon-violet-500 via-neon-pink-500 to-neon-cyan-400',
-    description: 'AGI-powered code generation with quantum-level precision. Self-debugging, self-optimizing architecture.',
-    skills: ['Neural Codex', 'Quantum Debug', 'Auto-Refactor'],
+    gradient: 'from-cyber-cyan-400 via-cyber-green-400 to-cyber-cyan-500',
+    description: 'AI-powered code generation with precision. Self-debugging, self-optimizing architecture.',
+    skills: ['Full-Stack', 'Auto-Debug', 'Code Review'],
   },
   {
     id: 'marketing',
     icon: Brain,
-    name: 'Neural Marketing',
-    gradient: 'from-neon-pink-500 via-neon-violet-500 to-purple-500',
-    description: 'Predictive campaign intelligence. Neural networks optimize ROI in real-time across all channels.',
-    skills: ['Neuro-SEO', 'AI Copywriting', 'Quantum Analytics'],
+    name: 'Cyber Marketing',
+    gradient: 'from-cyber-green-400 via-cyber-cyan-500 to-teal-500',
+    description: 'Predictive campaign intelligence. AI optimize ROI in real-time across all channels.',
+    skills: ['SEO/SEM', 'AI Content', 'Analytics'],
   },
   {
     id: 'finance',
     icon: BadgeDollarSign,
-    name: 'Quantum Finance',
-    gradient: 'from-amber-400 via-orange-500 to-neon-pink-400',
+    name: 'Cyber Finance',
+    gradient: 'from-emerald-400 via-cyber-green-500 to-cyan-500',
     description: 'AI-powered financial forecasting with blockchain-grade security. Predictive market analysis.',
-    skills: ['Quantum Forecast', 'Risk AI', 'Crypto Analysis'],
+    skills: ['Forecasting', 'Risk AI', 'Investment'],
   },
   {
     id: 'automation',
     icon: Cpu,
-    name: 'Neural Automation',
-    gradient: 'from-neon-cyan-500 via-neon-violet-500 to-neon-green-400',
+    name: 'Cyber Automation',
+    gradient: 'from-cyber-cyan-500 via-teal-500 to-cyber-green-400',
     description: 'Self-evolving workflows that adapt to your needs. Deploy infinite intelligent agents instantly.',
-    skills: ['AI Agents', 'Auto-Scale', 'Neural Flows'],
+    skills: ['AI Agents', 'Auto-Scale', 'Workflows'],
   },
 ];
 
@@ -47,19 +47,19 @@ const securityFeatures = [
 export default function LandingPage({ onSelectExpert }) {
   return (
     <div className="min-h-screen bg-void-950 text-white relative overflow-hidden">
-      {/* 2027 Neural Void Background */}
+      {/* 2027 Cyber Matrix Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Animated Void Orbs */}
-        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-neon-violet-500/20 rounded-full blur-[120px] animate-float" />
-        <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-neon-pink-500/15 rounded-full blur-[100px] animate-float" style={{ animationDelay: '2s' }} />
-        <div className="absolute bottom-1/4 left-1/2 w-[400px] h-[400px] bg-neon-cyan-500/10 rounded-full blur-[80px] animate-float" style={{ animationDelay: '4s' }} />
+        {/* Animated Cyber Orbs - Cyan and Green */}
+        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-cyber-cyan-500/20 rounded-full blur-[120px] animate-float" />
+        <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-cyber-green-500/15 rounded-full blur-[100px] animate-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute bottom-1/4 left-1/2 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[80px] animate-float" style={{ animationDelay: '4s' }} />
         
-        {/* Holographic Grid */}
-        <div className="absolute inset-0 bg-neural-void opacity-50" />
+        {/* Cyber Grid */}
+        <div className="absolute inset-0 bg-cyber-grid opacity-50" />
         
-        {/* Scan Line Effect */}
+        {/* Scan Line Effect - Cyan */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute w-full h-px bg-gradient-to-r from-transparent via-neon-violet-500/50 to-transparent animate-scan" />
+          <div className="absolute w-full h-px bg-gradient-to-r from-transparent via-cyber-cyan-500/50 to-transparent animate-scan" />
         </div>
       </div>
 
@@ -72,39 +72,39 @@ export default function LandingPage({ onSelectExpert }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* 2027 Self-Evolving Badge - PROMINENT */}
+            {/* 2027 Self-Evolving Badge - PROMINENT - Cyan/Green */}
             <div className="flex justify-center mb-10">
               <motion.div
                 className="relative group"
                 animate={{
                   boxShadow: [
-                    '0 0 30px rgba(139, 92, 246, 0.7)',
-                    '0 0 50px rgba(236, 72, 153, 0.9)',
-                    '0 0 30px rgba(139, 92, 246, 0.7)',
+                    '0 0 30px rgba(34, 211, 238, 0.8)',
+                    '0 0 50px rgba(16, 185, 129, 0.9)',
+                    '0 0 30px rgba(34, 211, 238, 0.8)',
                   ],
                 }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-neon-violet-500 via-neon-pink-500 to-neon-cyan-500 rounded-full blur-xl opacity-60 animate-pulse-glow" />
+                <div className="absolute inset-0 bg-gradient-to-r from-cyber-cyan-500 via-cyber-green-500 to-cyber-cyan-400 rounded-full blur-xl opacity-60 animate-pulse-glow" />
                 <Badge 
                   variant="glow" 
-                  className="relative px-8 py-3 text-lg font-bold bg-void-900/90 backdrop-blur-xl border-2 border-neon-violet-400/50"
+                  className="relative px-8 py-3 text-lg font-bold bg-void-900/90 backdrop-blur-xl border-2 border-cyber-cyan-400/50"
                 >
                   <Infinity size={24} className="inline mr-2 animate-spin" style={{ animationDuration: '3s' }} />
-                  <span className="bg-gradient-to-r from-neon-violet-400 via-neon-pink-400 to-neon-cyan-400 text-transparent bg-clip-text animate-gradient-x">
+                  <span className="bg-gradient-to-r from-cyber-cyan-400 via-cyber-green-400 to-cyber-cyan-300 text-transparent bg-clip-text animate-gradient-x">
                     SELF-EVOLVING AI
                   </span>
-                  <Sparkles size={20} className="inline ml-2 text-neon-pink-400 animate-pulse" />
+                  <Sparkles size={20} className="inline ml-2 text-cyber-green-400 animate-pulse" />
                 </Badge>
               </motion.div>
             </div>
 
-            {/* Security Badges Row */}
+            {/* Security Badges Row - Cyan/Green theme */}
             <div className="flex justify-center gap-4 mb-10 flex-wrap">
               {[
-                { icon: Shield, text: 'Military-Grade', color: 'neon-violet' },
-                { icon: Lock, text: 'HIPAA Compliant', color: 'neon-pink' },
-                { icon: CheckCircle2, text: 'Zero-Trust', color: 'neon-cyan' },
+                { icon: Shield, text: 'Military-Grade', color: 'cyber-cyan' },
+                { icon: Lock, text: 'HIPAA Compliant', color: 'cyber-green' },
+                { icon: CheckCircle2, text: 'Zero-Trust', color: 'cyan' },
               ].map((badge) => {
                 const Icon = badge.icon;
                 return (
@@ -120,26 +120,26 @@ export default function LandingPage({ onSelectExpert }) {
             </div>
 
             <h1 className="text-7xl md:text-9xl font-black tracking-tighter mb-8 leading-none">
-              <span className="block bg-gradient-to-r from-neon-violet-400 via-neon-pink-400 to-neon-cyan-400 text-transparent bg-clip-text animate-gradient-x bg-[length:200%_auto]">
-                Neural AI
+              <span className="block bg-gradient-to-r from-cyber-cyan-400 via-cyber-green-400 to-cyan-300 text-transparent bg-clip-text animate-gradient-x bg-[length:200%_auto]">
+                Cyber AI
               </span>
               <span className="block text-white mt-2">2027 Edition</span>
             </h1>
 
             <p className="text-2xl md:text-3xl text-gray-300 mb-6 leading-relaxed max-w-4xl mx-auto font-light">
               The world's first{' '}
-              <span className="text-neon-violet-400 font-semibold">self-upgrading</span>{' '}
+              <span className="text-cyber-cyan-400 font-semibold">self-upgrading</span>{' '}
               AI assistant.
               <br />
               Automatically evolves with{' '}
-              <span className="text-neon-pink-400 font-semibold">zero intervention</span>.{' '}
+              <span className="text-cyber-green-400 font-semibold">zero intervention</span>.{' '}
               Deploy to{' '}
-              <span className="text-neon-cyan-400 font-semibold">any application</span>.
+              <span className="text-cyan-400 font-semibold">any application</span>.
             </p>
 
             <p className="text-lg text-gray-400 mb-10 max-w-3xl mx-auto">
-              Neural networks that continuously learn, adapt, and upgrade themselves. 
-              Quantum-grade security. Infinite scalability. Welcome to 2027.
+              AI systems that continuously learn, adapt, and upgrade themselves. 
+              Military-grade security. Infinite scalability. Welcome to 2027.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
@@ -148,26 +148,26 @@ export default function LandingPage({ onSelectExpert }) {
                   const expertSection = document.getElementById('experts');
                   expertSection?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="relative group px-10 py-5 text-lg font-bold bg-gradient-to-r from-neon-violet-600 via-neon-pink-600 to-neon-violet-600 bg-[length:200%_auto] animate-gradient-x hover:shadow-neon-violet transition-all text-white rounded-2xl"
+                className="relative group px-10 py-5 text-lg font-bold bg-gradient-to-r from-cyber-cyan-600 via-cyber-green-600 to-cyber-cyan-600 bg-[length:200%_auto] animate-gradient-x hover:shadow-cyber-cyan transition-all text-white rounded-2xl"
               >
-                <span className="relative z-10">Launch Neural AI</span>
+                <span className="relative z-10">Launch Cyber AI</span>
                 <ArrowRight className="inline ml-2 group-hover:translate-x-1 transition-transform" size={24} />
-                <div className="absolute inset-0 bg-holographic rounded-2xl opacity-0 group-hover:opacity-30 transition-opacity blur-xl" />
+                <div className="absolute inset-0 bg-matrix-glow rounded-2xl opacity-0 group-hover:opacity-30 transition-opacity blur-xl" />
               </Button>
               <Button 
                 variant="secondary"
-                className="px-10 py-5 text-lg font-semibold bg-void-900/60 backdrop-blur-xl border-2 border-neon-cyan-500/30 hover:border-neon-cyan-400 hover:shadow-neon-cyan text-white rounded-2xl transition-all"
+                className="px-10 py-5 text-lg font-semibold bg-void-900/60 backdrop-blur-xl border-2 border-cyber-green-500/30 hover:border-cyber-green-400 hover:shadow-cyber-green text-white rounded-2xl transition-all"
               >
-                View Quantum Pricing
+                View Pricing
               </Button>
             </div>
 
-            {/* 2027 Holographic Stats */}
+            {/* 2027 Cyber Stats */}
             <div className="grid grid-cols-3 gap-8 mt-20 max-w-4xl mx-auto">
               {[
-                { label: 'Response Time', value: '<100ms', subtext: 'Neural Speed', icon: Zap, color: 'neon-violet' },
-                { label: 'Auto-Upgrades', value: '∞', subtext: 'Self-Evolving', icon: Infinity, color: 'neon-pink' },
-                { label: 'Uptime SLA', value: '99.99%', subtext: 'Quantum Reliability', icon: Cpu, color: 'neon-cyan' },
+                { label: 'Response Time', value: '<100ms', subtext: 'Lightning Fast', icon: Zap, color: 'cyber-cyan' },
+                { label: 'Auto-Upgrades', value: '∞', subtext: 'Self-Evolving', icon: Infinity, color: 'cyber-green' },
+                { label: 'Uptime SLA', value: '99.99%', subtext: 'Always On', icon: Cpu, color: 'cyan' },
               ].map((stat, i) => {
                 const Icon = stat.icon;
                 return (

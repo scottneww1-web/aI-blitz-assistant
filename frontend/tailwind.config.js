@@ -4,40 +4,35 @@ export default {
   theme: {
     extend: {
       colors: {
-        // 2027 Neural Void Theme - Deep Space Dark Mode
+        // 2027 Cyber Matrix Theme - Black/Grey with Cyan/Green
         void: {
-          950: '#030014', // Void Black (deepest background)
-          900: '#0a0a1f', // Deep Space
-          800: '#1a1a2e', // Dark Matter
-          700: '#16213e', // Nebula Dark
+          950: '#000000', // Pure Black (deepest background)
+          900: '#0a0a0a', // Near Black
+          800: '#1a1a1a', // Dark Grey
+          700: '#2a2a2a', // Medium Dark Grey
+          600: '#3a3a3a', // Medium Grey
         },
-        neon: {
-          violet: {
-            400: '#a78bfa', // Electric Violet Light
-            500: '#8b5cf6', // Electric Violet
-            600: '#7c3aed', // Electric Violet Dark
-            700: '#6d28d9', // Deep Violet
-          },
-          pink: {
-            400: '#f472b6', // Laser Pink Light
-            500: '#ec4899', // Laser Pink
-            600: '#db2777', // Laser Pink Dark
-          },
+        cyber: {
           cyan: {
-            400: '#22d3ee', // Neon Cyan Light
-            500: '#06b6d4', // Neon Cyan
-            600: '#0891b2', // Neon Cyan Dark
+            300: '#67e8f9', // Bright Cyan
+            400: '#22d3ee', // Neon Cyan
+            500: '#06b6d4', // Electric Cyan
+            600: '#0891b2', // Deep Cyan
+            700: '#0e7490', // Darker Cyan
           },
           green: {
-            400: '#4ade80', // Matrix Green Light
-            500: '#22c55e', // Matrix Green
+            300: '#6ee7b7', // Bright Green
+            400: '#34d399', // Neon Green
+            500: '#10b981', // Electric Green
+            600: '#059669', // Deep Green
+            700: '#047857', // Darker Green
           },
         },
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'neural-void': 'radial-gradient(ellipse at top, rgba(139, 92, 246, 0.15), transparent 60%), radial-gradient(ellipse at bottom, rgba(236, 72, 153, 0.1), transparent 60%)',
-        'holographic': 'linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(236, 72, 153, 0.3), rgba(34, 211, 238, 0.3))',
+        'cyber-grid': 'radial-gradient(ellipse at top, rgba(34, 211, 238, 0.15), transparent 60%), radial-gradient(ellipse at bottom, rgba(16, 185, 129, 0.1), transparent 60%)',
+        'matrix-glow': 'linear-gradient(135deg, rgba(34, 211, 238, 0.3), rgba(16, 185, 129, 0.3), rgba(34, 211, 238, 0.2))',
       },
       animation: {
         'gradient-x': 'gradient-x 4s ease infinite',
@@ -60,11 +55,11 @@ export default {
         'pulse-glow': {
           '0%, 100%': {
             opacity: '1',
-            boxShadow: '0 0 30px rgba(139, 92, 246, 0.7)',
+            boxShadow: '0 0 30px rgba(34, 211, 238, 0.8)',
           },
           '50%': {
             opacity: '0.8',
-            boxShadow: '0 0 50px rgba(236, 72, 153, 0.9)',
+            boxShadow: '0 0 50px rgba(16, 185, 129, 0.9)',
           },
         },
         'float': {
@@ -96,11 +91,10 @@ export default {
         },
       },
       boxShadow: {
-        'neon-violet': '0 0 40px rgba(139, 92, 246, 0.6), 0 0 80px rgba(139, 92, 246, 0.3)',
-        'neon-pink': '0 0 40px rgba(236, 72, 153, 0.6), 0 0 80px rgba(236, 72, 153, 0.3)',
-        'neon-cyan': '0 0 40px rgba(34, 211, 238, 0.6), 0 0 80px rgba(34, 211, 238, 0.3)',
-        'holographic': '0 8px 32px rgba(139, 92, 246, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
-        'glass-void': '0 8px 32px 0 rgba(3, 0, 20, 0.7)',
+        'cyber-cyan': '0 0 40px rgba(34, 211, 238, 0.6), 0 0 80px rgba(34, 211, 238, 0.3)',
+        'cyber-green': '0 0 40px rgba(16, 185, 129, 0.6), 0 0 80px rgba(16, 185, 129, 0.3)',
+        'matrix-glow': '0 8px 32px rgba(34, 211, 238, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+        'glass-dark': '0 8px 32px 0 rgba(0, 0, 0, 0.7)',
       },
       backdropBlur: {
         'xs': '2px',
