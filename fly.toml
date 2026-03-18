@@ -3,6 +3,7 @@ primary_region = "iad"
 
 [build]
   dockerfile = "frontend/Dockerfile"
+  build-context = "frontend"
 
 [env]
   PORT = "8080"
