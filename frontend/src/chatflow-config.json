@@ -1,0 +1,9 @@
+{
+  "businessName": "Ai Blitz",
+  "aiName": "Blitz AI",
+  "primaryColor": "#0891B2",
+  "accentColor": "#0EA5E9",
+  "welcomeMessage": "⚡ Blitz AI here. World-class expert in coding, marketing, finance & automation. What do you need?",
+  "apiEndpoint": "/api/chat",
+  "avatarIcon": "⚡"
+}
