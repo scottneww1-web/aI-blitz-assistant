@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Terminal, TrendingUp, BadgeDollarSign, Zap, ArrowRight, Sparkles } from 'lucide-react';
+import { Terminal, TrendingUp, BadgeDollarSign, Zap, ArrowRight, Sparkles, Shield, Lock, CheckCircle2, Code2, Layers } from 'lucide-react';
 import { Button, Badge, GlassCard } from '../components/ui/primitives';
 
 const experts = [
@@ -8,7 +8,7 @@ const experts = [
     name: 'Precision Coding',
     icon: Terminal,
     gradient: 'from-precision-emerald-500 to-precision-cyan-500',
-    description: 'World-class code with surgical precision. Build, debug, optimize.',
+    description: 'World-class code with surgical precision. Build, debug, optimize with military-grade accuracy.',
     skills: ['Full-Stack Dev', 'System Design', 'Code Review'],
   },
   {
@@ -16,7 +16,7 @@ const experts = [
     icon: TrendingUp,
     name: 'Precision Marketing',
     gradient: 'from-pink-500 to-rose-500',
-    description: 'Data-driven campaigns that hit every mark. ROI guaranteed.',
+    description: 'Data-driven campaigns that hit every mark. ROI guaranteed with precision targeting.',
     skills: ['SEO/SEM', 'Content Strategy', 'Analytics'],
   },
   {
@@ -24,7 +24,7 @@ const experts = [
     icon: BadgeDollarSign,
     name: 'Precision Finance',
     gradient: 'from-amber-400 to-orange-500',
-    description: 'Strategic financial guidance with mathematical accuracy.',
+    description: 'Strategic financial guidance with mathematical accuracy and encrypted security.',
     skills: ['Forecasting', 'Investment', 'Risk Analysis'],
   },
   {
@@ -32,9 +32,16 @@ const experts = [
     icon: Zap,
     name: 'Precision Automation',
     gradient: 'from-precision-cyan-500 to-precision-teal-600',
-    description: 'Eliminate repetitive tasks with flawless automation workflows.',
+    description: 'Eliminate repetitive tasks with flawless automation workflows. Deploy anywhere.',
     skills: ['Process Design', 'Integration', 'Optimization'],
   },
+];
+
+const securityFeatures = [
+  { icon: Shield, text: 'Military-Grade Encryption' },
+  { icon: Lock, text: 'HIPAA Compliant' },
+  { icon: CheckCircle2, text: 'End-to-End Security' },
+  { icon: Code2, text: 'SOC 2 Type II' },
 ];
 
 export default function LandingPage({ onSelectExpert }) {
@@ -56,25 +63,38 @@ export default function LandingPage({ onSelectExpert }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Badge variant="glow" className="mb-8">
-              <Sparkles size={16} />
-              Powered by GPT-5.2
-            </Badge>
+            <div className="flex justify-center gap-4 mb-8 flex-wrap">
+              <Badge variant="glow" className="mb-2">
+                <Sparkles size={16} />
+                Powered by GPT-5.2
+              </Badge>
+              <Badge variant="default" className="mb-2">
+                <Shield size={16} />
+                Military-Grade Security
+              </Badge>
+              <Badge variant="success" className="mb-2">
+                <Lock size={16} />
+                HIPAA Compliant
+              </Badge>
+            </div>
 
             <h1 className="text-6xl md:text-8xl font-extrabold tracking-tighter mb-6">
               <span className="bg-gradient-to-r from-precision-cyan-400 via-precision-teal-400 to-precision-emerald-400 text-transparent bg-clip-text animate-gradient-x">
                 Precision AI
               </span>
               <br />
-              <span className="text-white">Workforce</span>
+              <span className="text-white">Universal Assistant</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed max-w-3xl mx-auto">
-              Elite AI experts at your command. Surgical accuracy in{' '}
-              <span className="text-precision-cyan-400 font-semibold">coding</span>,{' '}
-              <span className="text-pink-400 font-semibold">marketing</span>,{' '}
-              <span className="text-amber-400 font-semibold">finance</span>, and{' '}
-              <span className="text-precision-teal-400 font-semibold">automation</span>.
+            <p className="text-xl md:text-2xl text-slate-300 mb-4 leading-relaxed max-w-3xl mx-auto">
+              Embed elite AI expertise into <span className="text-precision-cyan-400 font-semibold">any application</span>.
+              <br />
+              Military-grade security. HIPAA compliant. Deploy anywhere.
+            </p>
+
+            <p className="text-lg text-slate-400 mb-8 max-w-2xl mx-auto">
+              Add Precision AI to your workflow and boost knowledge across all your activities. 
+              Background intelligence that runs with every app you need.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -84,20 +104,39 @@ export default function LandingPage({ onSelectExpert }) {
                   expertSection?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                Choose Your Expert
+                Try Free Demo
                 <ArrowRight className="ml-2" size={20} />
               </Button>
               <Button variant="secondary">
-                Watch Demo
+                View Pricing
               </Button>
+            </div>
+
+            {/* Security Badges */}
+            <div className="flex justify-center gap-6 mt-12 flex-wrap">
+              {securityFeatures.map((feature, i) => {
+                const Icon = feature.icon;
+                return (
+                  <motion.div
+                    key={feature.text}
+                    className="flex items-center gap-2 text-sm text-slate-400"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.5 + i * 0.1 }}
+                  >
+                    <Icon size={18} className="text-precision-cyan-400" />
+                    <span>{feature.text}</span>
+                  </motion.div>
+                );
+              })}
             </div>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-8 mt-16 max-w-3xl mx-auto">
               {[
                 { label: 'Response Time', value: '<1s', subtext: 'Average' },
-                { label: 'Accuracy Rate', value: '99.7%', subtext: 'Verified' },
-                { label: 'Users Served', value: '50k+', subtext: 'And growing' },
+                { label: 'Encryption', value: '256-bit', subtext: 'Military Grade' },
+                { label: 'Uptime', value: '99.9%', subtext: 'Guaranteed' },
               ].map((stat, i) => (
                 <motion.div
                   key={stat.label}
@@ -131,7 +170,7 @@ export default function LandingPage({ onSelectExpert }) {
                 Precision Expert
               </span>
             </h2>
-            <p className="text-slate-400 text-lg">Each expert trained to deliver flawless results in their domain</p>
+            <p className="text-slate-400 text-lg">Secure, encrypted AI expertise for any workflow or application</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
@@ -169,7 +208,7 @@ export default function LandingPage({ onSelectExpert }) {
                     </div>
 
                     <div className="mt-6 flex items-center text-precision-cyan-400 font-medium group-hover:gap-2 transition-all">
-                      Start Session
+                      Start Secure Session
                       <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </GlassCard>
@@ -179,19 +218,89 @@ export default function LandingPage({ onSelectExpert }) {
           </div>
         </section>
 
-        {/* Features */}
+        {/* Universal Integration */}
         <section className="container mx-auto px-6 py-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-3xl font-bold mb-12">Why Choose Precision AI?</h3>
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-precision-cyan-500 to-precision-teal-600 mb-6 shadow-glow-cyan">
+                <Layers size={40} className="text-white" />
+              </div>
+              <h3 className="text-3xl font-bold mb-4">
+                Embed Precision AI{' '}
+                <span className="bg-gradient-to-r from-precision-cyan-400 to-precision-emerald-400 text-transparent bg-clip-text">
+                  Anywhere
+                </span>
+              </h3>
+              <p className="text-slate-300 text-lg mb-8">
+                Add intelligent assistance to any application. One integration, unlimited knowledge enhancement.
+              </p>
+            </motion.div>
+
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { title: 'Instant Expertise', desc: 'No hiring, no training, no delays. Expert help in under 1 second.' },
-                { title: '24/7 Availability', desc: 'Your AI workforce never sleeps. Get answers anytime, anywhere.' },
-                { title: 'Cost Effective', desc: 'Elite expertise at a fraction of traditional consulting costs.' },
-              ].map((feature) => (
-                <div key={feature.title} className="p-6">
-                  <h4 className="text-xl font-semibold mb-3 text-precision-cyan-400">{feature.title}</h4>
-                  <p className="text-slate-400">{feature.desc}</p>
+                {
+                  title: 'Universal Widget',
+                  desc: 'Drop-in component for any web or mobile app. Works with all tech stacks.',
+                },
+                {
+                  title: 'Background Intelligence',
+                  desc: 'Run alongside your apps. Context-aware assistance without interrupting workflow.',
+                },
+                {
+                  title: 'Secure & Private',
+                  desc: 'Military-grade encryption. HIPAA compliant. Your data never leaves secure channels.',
+                },
+              ].map((feature, i) => (
+                <motion.div
+                  key={feature.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                >
+                  <GlassCard className="text-center h-full">
+                    <h4 className="text-xl font-semibold mb-3 text-precision-cyan-400">{feature.title}</h4>
+                    <p className="text-slate-400">{feature.desc}</p>
+                  </GlassCard>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="text-center mt-12">
+              <p className="text-slate-400 mb-6">
+                Start with a free trial. Upgrade for unlimited access and background mode.
+              </p>
+              <Button>Get Started Free</Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Security Compliance */}
+        <section className="container mx-auto px-6 py-20">
+          <div className="max-w-3xl mx-auto text-center">
+            <h3 className="text-3xl font-bold mb-8">Enterprise-Grade Security</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {[
+                'AES-256 Encryption',
+                'HIPAA Compliant',
+                'SOC 2 Type II',
+                'GDPR Ready',
+                'Zero-Trust Architecture',
+                'End-to-End Encrypted',
+                '2FA Authentication',
+                'Regular Security Audits',
+              ].map((cert) => (
+                <div
+                  key={cert}
+                  className="bg-slate-900/40 border border-precision-cyan-400/20 rounded-xl p-4 backdrop-blur-sm"
+                >
+                  <CheckCircle2 size={20} className="text-precision-cyan-400 mx-auto mb-2" />
+                  <p className="text-sm text-slate-300">{cert}</p>
                 </div>
               ))}
             </div>
