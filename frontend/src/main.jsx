@@ -1,7 +1,7 @@
-<React.StrictMode>
-  <div style={{ background: "#000", minHeight: "100vh", padding: "20px" }}>
-    <BrowserRouter>
-      <BlitzAIPage />
-    </BrowserRouter>
-  </div>
-</React.StrictMode>
+export default function BlitzAIPage() {
+  return (
+    <div style={{ color: "white", padding: "20px" }}>
+      App Loaded
+    </div>
+  );
+}
