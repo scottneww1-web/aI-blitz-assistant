@@ -3,39 +3,63 @@ import { useState } from 'react';
 export default function ChatInterface({ expert, onBack }) {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
 
   const sendMessage = () => {
     if (!input.trim()) return;
 
     const userMessage = { role: "user", text: input };
-    const aiMessage = {
-      role: "ai",
-      text: `(${expert}) response: ${input}`
-    };
+    setMessages(prev => [...prev, userMessage]);
 
-    setMessages([...messages, userMessage, aiMessage]);
+    const currentInput = input;
     setInput("");
+    setIsTyping(true);
+
+    setTimeout(() => {
+      const aiMessage = {
+        role: "ai",
+        text: `(${expert}) processed: ${currentInput}`
+      };
+
+      setMessages(prev => [...prev, aiMessage]);
+      setIsTyping(false);
+    }, 800);
   };
 
   return (
-    <div style={{ padding: "20px", minHeight: "100vh", background: "#000" }}>
-      
-      <button onClick={onBack} style={{
-        marginBottom: "20px",
-        background: "transparent",
-        border: "1px solid #00ffc6",
-        color: "#00ffc6",
-        padding: "8px 12px",
-        borderRadius: "8px",
-        cursor: "pointer"
-      }}>
+    <div style={{
+      minHeight: "100vh",
+      padding: "20px",
+      background: "radial-gradient(circle at top, #0a0a0a, #000 80%)",
+      color: "#e6fefe"
+    }}>
+
+      {/* Back Button */}
+      <button
+        onClick={onBack}
+        style={{
+          marginBottom: "20px",
+          background: "transparent",
+          border: "1px solid #00ffc6",
+          color: "#00ffc6",
+          padding: "8px 12px",
+          borderRadius: "8px",
+          cursor: "pointer"
+        }}
+      >
         ← Back
       </button>
 
-      <h2 style={{ color: "#00ffc6", marginBottom: "20px" }}>
+      {/* Header */}
+      <h2 style={{
+        color: "#00ffc6",
+        textShadow: "0 0 10px #00ffc6",
+        marginBottom: "15px"
+      }}>
         {expert}
       </h2>
 
+      {/* Chat Box */}
       <div style={{
         border: "1px solid rgba(0,255,198,0.2)",
         borderRadius: "12px",
@@ -45,6 +69,7 @@ export default function ChatInterface({ expert, onBack }) {
         marginBottom: "15px",
         background: "rgba(15,23,42,0.4)"
       }}>
+
         {messages.map((msg, i) => (
           <div
             key={i}
@@ -65,8 +90,17 @@ export default function ChatInterface({ expert, onBack }) {
             </span>
           </div>
         ))}
+
+        {/* Typing Indicator */}
+        {isTyping && (
+          <div style={{ color: "#00ffc6", marginTop: "10px" }}>
+            AI is thinking...
+          </div>
+        )}
+
       </div>
 
+      {/* Input Area */}
       <div style={{ display: "flex", gap: "10px" }}>
         <input
           value={input}
@@ -82,14 +116,17 @@ export default function ChatInterface({ expert, onBack }) {
           }}
         />
 
-        <button onClick={sendMessage} style={{
-          background: "#00ffc6",
-          color: "#000",
-          border: "none",
-          padding: "10px 16px",
-          borderRadius: "8px",
-          cursor: "pointer"
-        }}>
+        <button
+          onClick={sendMessage}
+          style={{
+            background: "#00ffc6",
+            color: "#000",
+            border: "none",
+            padding: "10px 16px",
+            borderRadius: "8px",
+            cursor: "pointer"
+          }}
+        >
           Send
         </button>
       </div>
