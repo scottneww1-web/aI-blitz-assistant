@@ -16,9 +16,13 @@ export default function BlitzAIPage() {
     setSelectedExpert(null);
   };
 
-  if (showChat && selectedExpert) {
-    return <ChatInterface expert={selectedExpert} onBack={handleBack} />;
-  }
-
-  return <LandingPage2027 onSelectExpert={handleSelectExpert} />;
+  return (
+    <div style={{ minHeight: "100vh", background: "transparent" }}>
+      {showChat && selectedExpert ? (
+        <ChatInterface expert={selectedExpert} onBack={handleBack} />
+      ) : (
+        <LandingPage2027 onSelectExpert={handleSelectExpert} />
+      )}
+    </div>
+  );
 }
