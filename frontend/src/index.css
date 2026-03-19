@@ -2,18 +2,39 @@
   box-sizing: border-box;
 }
 
-body {
+html, body, #root {
+  height: 100%;
   margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: Arial, sans-serif;
-  background: #000;
+  background: radial-gradient(circle at top, #0a0a0a, #000 80%) !important;
   color: #e6fefe;
 }
 
-button, input {
-  font-family: inherit;
-  transition: all 0.2s ease;
+/* Force inputs + buttons to match theme */
+button {
+  background: #0f172a;
+  border: 1px solid #00ffc6;
+  color: #00ffc6;
+  border-radius: 8px;
 }
 
+button:hover {
+  background: #00ffc6;
+  color: #000;
+}
+
+/* Inputs */
+input, textarea {
+  background: #020617;
+  border: 1px solid #00ffc6;
+  color: #fff;
+}
+
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -25,3 +46,4 @@ button, input {
 ::-webkit-scrollbar-thumb {
   background: #00ffc6;
   border-radius: 4px;
+}
