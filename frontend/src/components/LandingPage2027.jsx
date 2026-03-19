@@ -7,17 +7,17 @@ export default function LandingPage2027({ onSelectExpert }) {
   ];
 
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        padding: "50px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        background: "radial-gradient(circle at top, #0a0a0a, #000 80%)"
-      }}
-    >
+    <div style={{
+      minHeight: "100vh",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      padding: "40px",
+      background: "radial-gradient(circle at top, #0a0a0a, #000 80%)"
+    }}>
+
+      {/* Header */}
       <div style={{ textAlign: "center", marginBottom: "40px" }}>
         <h1 style={{
           color: "#00ffc6",
@@ -32,14 +32,13 @@ export default function LandingPage2027({ onSelectExpert }) {
         </p>
       </div>
 
-      <div
-        style={{
-          display: "grid",
-          gap: "16px",
-          width: "100%",
-          maxWidth: "420px"
-        }}
-      >
+      {/* Expert Cards */}
+      <div style={{
+        display: "grid",
+        gap: "16px",
+        width: "100%",
+        maxWidth: "420px"
+      }}>
         {experts.map((expert) => (
           <div
             key={expert.name}
@@ -51,21 +50,29 @@ export default function LandingPage2027({ onSelectExpert }) {
               padding: "16px",
               cursor: "pointer",
               boxShadow: "0 0 10px rgba(0,255,198,0.08)",
-              transition: "all 0.2s ease"
+              transition: "all 0.25s ease"
             }}
             onMouseOver={(e) => {
-              e.currentTarget.style.boxShadow = "0 0 18px rgba(0,255,198,0.4)";
-              e.currentTarget.style.transform = "scale(1.02)";
+              e.currentTarget.style.transform = "translateY(-4px) scale(1.02)";
+              e.currentTarget.style.boxShadow = "0 0 25px rgba(0,255,198,0.35)";
             }}
             onMouseOut={(e) => {
+              e.currentTarget.style.transform = "translateY(0) scale(1)";
               e.currentTarget.style.boxShadow = "0 0 10px rgba(0,255,198,0.08)";
-              e.currentTarget.style.transform = "scale(1)";
             }}
           >
-            <div style={{ color: "#00ffc6", fontWeight: "bold" }}>
+            <div style={{
+              color: "#00ffc6",
+              fontWeight: "bold",
+              marginBottom: "5px"
+            }}>
               {expert.name}
             </div>
-            <div style={{ color: "#94a3b8", fontSize: "13px", marginTop: "4px" }}>
+
+            <div style={{
+              color: "#94a3b8",
+              fontSize: "13px"
+            }}>
               {expert.desc}
             </div>
           </div>
