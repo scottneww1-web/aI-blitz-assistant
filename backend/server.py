@@ -1,31 +1,48 @@
-from fastapi import FastAPI, Request
+# Remove or comment out the current CORSMiddleware block
+# app.add_middleware(CORSMiddleware, ...)
+
+# Add this secure version:
+from starlette.middleware.base import BaseHTTPMiddleware
 from fastapi.middleware.cors import CORSMiddleware
-import os
-from dotenv import load_dotenv
-from chatflow_handler import chatflow_router
 
-load_dotenv()
+# Explicitly define allowed origins (no wildcards in production)
+allowed_origins = [
+    "https://yourapp.com",
+    "https://www.yourapp.com",
+    "http://localhost:3000",  # For local development
+]
 
-# Initialize App
-app = FastAPI(title="Ai Blitz Assistant")
-
-# CORS
-cors_origins = os.getenv('CORS_ORIGINS', '*').split(',')
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=cors_origins,
+    allow_origins=allowed_origins,  # Must be specific when allow_credentials=True
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["POST", "GET"],  # Only what you use
+    allow_headers=["Authorization", "Content-Type"],
+    max_age=3600,  # Cache preflight requests for 1 hour
 )
 
-# Include chat router
-app.include_router(chatflow_router)
+# Optional: Add security headers middleware
+class SecurityHeadersMiddleware(BaseHTTPMiddleware):
+    async def dispatch(self, request, call_next):
+        response = await call_next(request)
+        response.headers["X-Content-Type-Options"] = "nosniff"
+        response.headers["X-Frame-Options"] = "DENY"
+        response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+        response.headers["Content-Security-Policy"] = "default-src 'none'; frame-ancestors 'none'"
+        if request.url.scheme == "https":
+            response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains"
+        return response
 
-@app.get("/")
-async def root():
-    return {"message": "Ai Blitz Assistant API", "status": "running"}
+app.add_middleware(SecurityHeadersMiddleware)Copied! 
+origins = (
+    ["https://yourapp.com", "https://www.yourapp.com"]
+    if os.getenv("ENV") == "production"
+    else ["http://localhost:3000"]
+)  
+ 
+  from slowapi import Limiter
+from slowapi.util import get_remote_address
+limiter = Limiter(key_func=get_remote_address)
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)   
 
-@app.get("/health")
-async def health():
-    return {"status": "healthy"}
